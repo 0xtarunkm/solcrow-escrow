@@ -6,7 +6,7 @@ mod error;
 
 use contexts::*;
 
-declare_id!("9Vu2qr77epSMhaWqLgKm5uzzctAbZKJpuF3oYqaE6K5c");
+declare_id!("ChS5HG5cidaXzTJF9qb9huKqXGWbyGUZFvZ2SRqdfkpk");
 
 #[program]
 pub mod marketplace {

@@ -8,9 +8,7 @@ use crate::states::Escrow;
 pub struct Make<'info> {
     #[account(mut)]
     maker: Signer<'info>,
-    #[account(
-        mint::token_program = token_program
-    )]
+    #[account(mut)]
     mint: InterfaceAccount<'info, Mint>,
     #[account(
         mut,

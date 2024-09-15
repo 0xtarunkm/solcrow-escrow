@@ -10,6 +10,7 @@ pub struct Take<'info> {
     #[account(mut)]
     maker: SystemAccount<'info>,
     #[account(
+        mut,
         mint::token_program = token_program
     )]
     mint: InterfaceAccount<'info, Mint>,
@@ -18,7 +19,7 @@ pub struct Take<'info> {
         payer = taker,
         associated_token::mint = mint,
         associated_token::authority = taker,
-        associated_token::token_program = token_program
+        // associated_token::token_program = token_program
     )]
     taker_ata: InterfaceAccount<'info, TokenAccount>,
     #[account(
@@ -32,7 +33,7 @@ pub struct Take<'info> {
         mut,
         associated_token::mint = mint,
         associated_token::authority = escrow,
-        associated_token::token_program = token_program
+        // associated_token::token_program = token_program
     )]
     vault: InterfaceAccount<'info, TokenAccount>,
     system_program: Program<'info, System>,
@@ -54,7 +55,7 @@ impl<'info> Take<'info> {
         let seeds = &[
             b"escrow",
             self.maker.to_account_info().key.as_ref(),
-            &self.escrow.seed.to_be_bytes(),
+            &self.escrow.seed.to_le_bytes(),
             &[self.escrow.bump]
         ];
 

@@ -1,5 +1,7 @@
 # Solcrow Escrow Program
 
+<img width="1221" alt="Screenshot 2024-09-16 at 12 25 06 PM" src="https://github.com/user-attachments/assets/6d65a361-43f0-49ef-8877-a12c821d098d">
+
 This decentralized application allows users to post job listings for work they need done, and freelancers can select these jobs, complete them, and get paid in a secure, trustless manner.
 
 ## Features
